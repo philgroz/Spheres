@@ -1,0 +1,51 @@
+var name = "Hawaiian";
+var cid = "03";
+var sid = "24";
+var tid = "01";
+var description = "Premium ham paired with sweet pineapple, mozzarella and our authentic tomato sauce.";
+
+function item(name, cid, sid, tid, description){
+	this.prototype.attribute.name = name;
+	this.prototype.attribute.cid = cid;
+	this.prototype.attribute.sid = sid;
+	this.prototype.attribute.tid = tid;
+	this.prototype.description = description;
+}
+function category(name, ext, tid, description){
+	this.prototype.attribute.name = name;
+	this.prototype.attribute.ext = ext;
+	this.prototype.attribute.cid = cid;
+	this.prototype.description = description;
+}
+
+var item = new item(name, cid, sid, tid, description);
+
+
+function xml_compile(item){
+	
+}
+
+//
+
+var menu = new Array;
+
+menu_raw[] = 
+
+function item(tid){
+	this.prototype = menu[tid];
+}
+
+//
+function getClassLibrary(){
+	$library_connection = mysqli_connect("mysql.fhost.com.au", "u872569273_club", "leckerseaford", "u872569273_club");
+	$request_library = "SELECT * FROM class_library";
+	$library = mysqli_query($library_connection, $request_library);
+	$library_array = mysqli_fetch_array($library, MYSQLI_ASSOC);
+	echo "var class_library = new Object();";
+	foreach ($library_array as $_class){
+		echo "class_library['".$_class['tid']."'] = '".$_class['json_string']."'";
+	}
+	mysqli_free_result($library_array);
+	mysqli_close($library_connection);
+}
+
